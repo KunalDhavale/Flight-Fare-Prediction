@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <link rel="shortcut icon" href="{{ url_for('static', filename='logo.jpg') }}">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Flight Fare Prediction</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../static/predict.css" />
+
+</head>
+
+<body>
+
+
+  <section id="Main">
+    <a href="{{ url_for( 'index' ) }}">
+      <h3>Flight Price Prediction</h3>
+    </a>
+    <div>
+      <ul id="navbar">
+        <li><a href="{{ url_for( 'index' ) }}">HOME</a></li>
+        <li><a class="active" href="{{ url_for( 'predict' ) }}">PREDICTION</a></li>
+        <!-- <li><a href="#">OVERVIEW</a></li> -->
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- Predict -->
+
+  <section id="Predict">
+    <div class="border">
+      <form action="{{ url_for( 'predict' ) }}" method="post">
+        <div class="container">
+          <div class="col1">
+            <div class="card">
+              <div class="inputs">
+                <h5 class="title">Departure Date</h5>
+                <input type="datetime-local" name="departure" id="departure" required="required">
+              </div>
+            </div>
+
+
+            <div class="card">
+              <div class="inputs">
+                <h5 class="title">Source</h5>
+                <select name="source" id="source select1" required="required" class="select1"
+                  onchange="getSelectValue(this.value)">
+                  <option value="Bangalore">Bangalore</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Chennai">Chennai</option>
+                </select>
+              </div>
+            </div>
+
+
+            <div class="card">
+              <div class="inputs">
+                <h5 class="title">Stopage</h5>
+                <select name="stopage" required="required">
+                  <option value="0">Non-Stop</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col2">
+            <div class="card">
+              <div class="inputs">
+                <h5 class="title">Arrival Date</h5>
+                <input type="datetime-local" name="arrival" id="arrival" required="required">
+              </div>
+            </div>
+
+
+            <div class="card">
+              <div class="inputs">
+                <h5 class="title">Destination</h5>
+                <select name="destination" id="destination select2" required="required" class="select2">
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Kolkata">Kolkata</option>
+                  <option value="Hyderabad">Hyderabad</option>
+                  <option value="Bangalore">Bangalore</option>
+                </select>
+              </div>
+            </div>
+
+
+            <div class="card">
+              <div class="inputs">
+                <h5 class="title">Select Airline</h5>
+                <select name="airline" id="airline" required="required" class="select2">
+                  <option value="Vistara">Vistara</option>
+                  <option value="Air India">Air India</option>
+                  <option value="IndiGo">IndiGo</option>
+                  <option value="Air Asia">Air Asia</option>
+                  <option value="GO_FIRST">GO_FIRST</option>
+                  <option value="SpiceJet">SpiceJet</option>
+                  <option value="AkasaAir">AkasaAir</option>
+                  <option value="AllianceAir">AllianceAir</option>
+                  <option value="StarAir">StarAir</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <center>
+          <input type="submit" value="Predict">
+          <br>
+          <br>
+          <h4>{{ prediction_text }}</h4>
+        </center>
+        
+    </div>
+    </form>
+    </div>
+  </section>
+
+
+  <footer id="Footer">
+
+    <div class="footer">
+      <h3> Flight Price Prediction </h3>
+
+      <ul class="socials">
+        <li><a target="_blank" href="https://github.com/dhananjay-bamane"><i class="fa fa-github"></i></a></li>
+        <li><a target="_blank" href="https://www.linkedin.com/in/dhananjaybamane/"><i class="fa fa-linkedin-square"></i></a></li>
+      </ul>
+    </div>
+
+    <div class="last">
+      <p>A Machine learning flight price prediction web-application, build with flask & deployed using Heroku</p>
+    </div>
+
+  </footer>
+
+  <script>
+    function getSelectValue(select1) {
+      if (select1 != '') {
+        $(".select2 option[value='" + select1 + "']").hide();
+        $(".select2 option[value!='" + select1 + "']").show();
+      }
+    }
+  </script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+    integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>

@@ -1,0 +1,282 @@
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+
+/*    Home page  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+
+body {
+    width: 100%;
+    background-color: #fff;
+    font-family: "Poppins", serif;
+    zoom: 80%;
+}
+
+
+/* Main Start */
+
+
+#Main {
+    padding: 10px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(45deg, #8490ff, #443B96, #62bdfc);
+    background-size: 500% 500%;
+    animation: change-gradient 5s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.13);
+    z-index: 997;
+    position: sticky;
+    top: 0;
+    left: 0%;
+}
+
+@keyframes change-gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+
+/* header */
+
+
+#Main a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#Main h3 {
+    margin: 10px 30px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+#navbar {
+    margin: 10px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+#navbar li {
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+    background: transparent;
+    list-style: none;
+    position: relative;
+}
+
+#navbar li a {
+    color: #fff;
+    line-height: 60px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #222;
+    box-sizing: content-box;
+    padding: 0;
+    transition: color .1s linear;
+}
+
+#navabar li a.active::after,
+#navbar li a:hover::after {
+    height: 2px;
+    position: absolute;
+    transition: color .1s linear;
+}
+
+.btn {
+    background-color: #333;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color .4s linear;
+}
+
+.success {
+    border-radius: 10px;
+    border: 1px solid #333;
+    padding: 10px 15px;
+    color: #fff;
+    transition: color .4s linear;
+}
+
+.success:hover {
+    background-color: #f9f9ff;
+    color: #222;
+    border: 1px solid #f9f9ff;
+    transition: color .4s linear;
+}
+
+
+/* Landing Page  */
+
+
+#Front {
+    /* background-image: url("../static/logo.jpg"); */
+    /* opacity: 70%; */
+    height: 110vh;
+    width: auto;
+    /* background-size: contain; */
+    background-position: top 10% right 45%;
+    /* padding: 100px 100px; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#Front .page {
+    margin: 60px;
+}
+
+.page h2 {
+    margin: 40px 0;
+    font-size: 44px;
+    text-align: center;
+}
+
+.page p {
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+#Model {
+    margin: 40px;
+}
+
+.acc {
+    margin: 80px;
+}
+
+.acc h1 {
+    margin: 40px;
+    font-size: 34px;
+    font-weight: 600;
+}
+
+.acc table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 20px;
+}
+
+.acc table, td, th {
+    border: 1px solid #222;
+    padding: 20px;
+    font-size: 18px;
+}
+
+/*  Footer  */
+
+
+#Footer {
+    justify-content: center;
+    position: bottom;
+    background: #111;
+    width: 100%;
+    /* padding: 5px; */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.13);
+    z-index: 100;
+}
+
+
+.footer {
+    padding: 20px 20px 0 20px;
+    position: relative;
+    text-align: center;
+}
+
+.footer h3 {
+    margin: 10px 40px;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+}
+
+.footer p {
+    margin: 10px 40px;
+    font-size: 18px;
+    color: silver;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+
+/*social -media*/
+
+
+.socials {
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.socials li {
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    /* border: 1px solid #fff; */
+}
+
+.socials a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 0;
+}
+
+.socials a i {
+    font-size: 38px;
+    transition: color .3s linear;
+}
+
+.socials a:hover .fa {
+    color: #8490ff;
+    transition: color .1s linear;
+}
+
+
+/* Text */
+
+
+.last {
+    padding: 20px;
+    margin: 0;
+}
+
+.last p {
+    font-size: 18px;
+    letter-spacing: .5px;
+    text-align: center;
+    color: gray;
+}
+
+.last span {
+    color: #8490ff;
+}

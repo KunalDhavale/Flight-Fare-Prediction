@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.jpg') }}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Flight Fare Prediction</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/style.css" />
+
+
+</head>
+
+<body>
+
+
+    <section id="Main">
+        <a href="{{ url_for( 'index' ) }}">
+            <h3>Flight Price Prediction</h3>
+        </a>
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="{{ url_for( 'index' ) }}">HOME</a></li>
+                <li><a href="{{ url_for( 'predict' ) }}">PREDICTION</a></li>
+                <!-- <li><a href="#">OVERVIEW</a></li> -->
+                <!-- <li><a href="#"><button class="btn success">CODE</button></a></li> -->
+            </ul>
+        </div>
+    </section>
+
+    <section id="Front">
+        <div class="page">
+            <h2>Introduction</h2>
+            <p>The goal of the flight price prediction project is to develop a model that can accurately predict the
+                prices of airline tickets. This project utilizes data analysis, machine learning, and statistical
+                modeling techniques to analyze historical flight data and make predictions on future flight prices.</p>
+            <br>
+            <p>The flight price prediction project is aimed at helping travelers plan their trips more effectively by
+                providing insights into the potential price trends of flight tickets. This model predicts the price of
+                the flight based on some parameters like total stops, journey Day, journey month, Air India, Indigo,
+                source, destination, etc. We have trained this model using the random forest regressor and after
+                training, fine-tune the model which is also known as hyper parameter tuning. Then save a model and
+                deploy this Flight Fare Prediction model using the Flask application on the localhost. The project aims to create a predictive model that can forecast flight prices with a high degree of accuracy. The flight price prediction project can provide valuable insights for travelers, travel agencies, and airlines to optimize their travel planning, pricing strategies.</p>
+        </div>
+    </section>
+
+
+    <center>
+        <section id="Model">
+            <div class="acc">
+                <h1>Performance metrics </h1>
+                <table>
+                    <tr>
+                        <th>Model accuracy</th>
+                        <th>Percentages</th>
+                    </tr>
+                    <tr>
+                        <th>ExtratreeRegressor</th>
+                        <th>93.70%</th>
+                    </tr>
+                    <tr>
+                        <th>Linear Regression</th>
+                        <th>72.00%</th>
+                    </tr>
+                    <tr>
+                        <th>XGBoost</th>
+                        <th>82.00%</th>
+                    </tr>
+                    <tr>
+                        <th>Random Forest Regressor</th>
+                        <th>93.80%</th>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="acc">
+                <h1></h1>
+                <table>
+                    <tr>
+                        <th>r2_Score</th>
+                        <th>Score</th>
+                    </tr>
+                    <tr>
+                        <th>ExtratreeRegressor</th>
+                        <th>0.89</th>
+                    </tr>
+                    <tr>
+                        <th>Linear Regression</th>
+                        <th>0.37</th>
+                    </tr>
+                    <tr>
+                        <th>XGBoost</th>
+                        <th>0.60</th>
+                    </tr>
+                    <tr>
+                        <th>Random Forest Regressor</th>
+                        <th>0.90</th>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </center>
+
+    <footer id="Footer">
+
+        <div class="footer">
+            <h3> Flight Price Prediction </h3>
+
+            <ul class="socials">
+                <li><a target="_blank" href="https://github.com/dhananjay-bamane"><i class="fa fa-github"></i></a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/in/dhananjaybamane/"><i
+                            class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="last">
+            <p>A Machine learning flight price prediction web-application, build with flask & deployed using Heroku</p>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
