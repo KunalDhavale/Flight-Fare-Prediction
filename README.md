@@ -24,7 +24,7 @@ It is a regression problem that is solved using RandomForestRegressor ML Algorit
 
 ## NOTE
 
-> You can access the website live at: https://flight-fare-prediction-b3ko.onrender.com/ <br>
+> You can access the website live at: https://flight-fare-prediction-i1mr.onrender.com/ <br>
 Python version 3.10.9 was used for the whole project.<br>
 
 ## Steps to run this application in your system
